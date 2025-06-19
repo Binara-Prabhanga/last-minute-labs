@@ -96,7 +96,7 @@ export default function LastMinuteLabs() {
       deliveredIn: "3 Days",
       status: "Completed",
       tag: "Final Year Project",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/last-minute-labs/placeholder.svg?height=200&width=300",
     },
     {
       title: "E-Commerce Mobile App",
@@ -104,7 +104,7 @@ export default function LastMinuteLabs() {
       deliveredIn: "5 Days",
       status: "Completed",
       tag: "Mobile Development",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/last-minute-labs/placeholder.svg?height=200&width=300",
     },
     {
       title: "Student Grade Predictor",
@@ -112,7 +112,7 @@ export default function LastMinuteLabs() {
       deliveredIn: "2 Days",
       status: "Completed",
       tag: "ML Mini Project",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/last-minute-labs/placeholder.svg?height=200&width=300",
     },
     {
       title: "Hospital Management System",
@@ -120,7 +120,7 @@ export default function LastMinuteLabs() {
       deliveredIn: "4 Days",
       status: "Completed",
       tag: "CRUD Application",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/last-minute-labs/placeholder.svg?height=200&width=300",
     },
     {
       title: "Social Media Dashboard",
@@ -128,7 +128,7 @@ export default function LastMinuteLabs() {
       deliveredIn: "6 Days",
       status: "Completed",
       tag: "Web Development",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/last-minute-labs/placeholder.svg?height=200&width=300",
     },
   ]
 
@@ -177,7 +177,7 @@ export default function LastMinuteLabs() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
-              <img src="/last-minute-labs-logo.png" alt="Last Minute Labs Logo" className="w-10 h-10 mr-3" />
+              <img src="/last-minute-labs/last-minute-labs-logo.png" alt="Last Minute Labs Logo" className="w-10 h-10 mr-3" />
               <div className="text-2xl font-bold text-[#BBE1FA]">Last Minute Labs</div>
             </div>
 
@@ -231,7 +231,7 @@ export default function LastMinuteLabs() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="/stressed-developer.png"
+            src="/last-minute-labs/stressed-developer.png"
             alt="Stressed IT Student"
             className="w-full h-full object-cover opacity-30"
           />
@@ -427,7 +427,7 @@ export default function LastMinuteLabs() {
                         <div className="md:flex">
                           <div className="md:w-1/2 relative overflow-hidden">
                             <img
-                              src={project.image || "/placeholder.svg"}
+                              src={project.image || "/last-minute-labs/placeholder.svg"}
                               alt={project.title}
                               className="w-full h-48 md:h-full object-cover transform hover:scale-110 transition-transform duration-700"
                             />
