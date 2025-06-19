@@ -12,6 +12,6 @@ const nextConfig = {
   output: "export", // Required for static export
   assetPrefix: "/last-minute-labs/", // Replace with your repo name
   basePath: "/last-minute-labs", // Replace with your repo name
-}
+};
 
 export default nextConfig;
