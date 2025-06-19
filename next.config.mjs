@@ -9,9 +9,12 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  output: "export", // Required for static export
-  assetPrefix: "/last-minute-labs/", // Replace with your repo name
-  basePath: "/last-minute-labs", // Replace with your repo name
+  output: "export", 
+  assetPrefix: "/last-minute-labs/", 
+  basePath: "/last-minute-labs", 
+  images: {
+    unoptimized: true, // Ensures images are exported correctly
+  },
 }
 
 export default nextConfig
