@@ -14,4 +14,4 @@ const nextConfig = {
   basePath: "/last-minute-labs", // Replace with your repo name
 }
 
-export default nextConfig
+export default nextConfig;
