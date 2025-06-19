@@ -605,7 +605,7 @@ export default function LastMinuteLabs() {
           <div className="grid md:grid-cols-3 gap-8">
             <div>
               <div className="flex items-center mb-4">
-                <img src="/last-minute-labs-logo.png" alt="Last Minute Labs Logo" className="w-8 h-8 mr-3" />
+                <img src="/last-minute-labs/last-minute-labs-logo.png" alt="Last Minute Labs Logo" className="w-8 h-8 mr-3" />
                 <h3 className="text-2xl font-bold text-[#3282B8]">Last Minute Labs</h3>
               </div>
               <p className="text-[#BBE1FA] mb-4">Helping students succeed with quality academic project support.</p>
