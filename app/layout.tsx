@@ -3,8 +3,8 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Last Minute Labs',
-  description: 'Created with v0',
-  generator: 'v0.dev',
+  description: 'Whether you are stuck with an assignment, need a system built fast, or want to learn hands-on — we’ve got you covered',
+  generator: '-Last Minute Labs',
 }
 
 export default function RootLayout({
