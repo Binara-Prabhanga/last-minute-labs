@@ -91,20 +91,20 @@ export default function LastMinuteLabs() {
 
   const projects = [
     {
-      title: "Library Management System",
-      tech: "React + Firebase",
-      deliveredIn: "3 Days",
+      title: "Hotel Management System",
+      tech: "MERN Stack",
+      deliveredIn: "7 Days",
       status: "Completed",
-      tag: "Final Year Project",
-      image: "/placeholder.svg?height=200&width=300",
+      tag: "Web Development",
+      image: "/hotel-management-systme.png?height=200&width=300",
     },
     {
-      title: "E-Commerce Mobile App",
-      tech: "React Native + Node.js",
-      deliveredIn: "5 Days",
+      title: "Hotel Management System",
+      tech: "MERN Stack",
+      deliveredIn: "7 Days",
       status: "Completed",
-      tag: "Mobile Development",
-      image: "/placeholder.svg?height=200&width=300",
+      tag: "Web Development",
+      image: "/hotel-management-systme.png?height=200&width=300",
     },
     {
       title: "Student Grade Predictor",
@@ -112,31 +112,31 @@ export default function LastMinuteLabs() {
       deliveredIn: "2 Days",
       status: "Completed",
       tag: "ML Mini Project",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/drone-management-syteme-02.jpg?height=800&width=600",
     },
     {
-      title: "Hospital Management System",
-      tech: "Java + MySQL",
-      deliveredIn: "4 Days",
-      status: "Completed",
-      tag: "CRUD Application",
-      image: "/placeholder.svg?height=200&width=300",
-    },
-    {
-      title: "Social Media Dashboard",
+      title: "Hotel Management System",
       tech: "MERN Stack",
-      deliveredIn: "6 Days",
+      deliveredIn: "7 Days",
       status: "Completed",
       tag: "Web Development",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/hotel-management-systme.png?height=200&width=300",
+    },
+    {
+      title: "Hotel Management System",
+      tech: "MERN Stack",
+      deliveredIn: "7 Days",
+      status: "Completed",
+      tag: "Web Development",
+      image: "/hotel-management-systme.png?height=200&width=300",
     },
   ]
 
   const stats = [
-    { number: "500+", label: "Projects Completed", icon: <Target className="w-6 h-6" /> },
+    { number: "30+", label: "Projects Completed", icon: <Target className="w-6 h-6" /> },
     { number: "98%", label: "Success Rate", icon: <Award className="w-6 h-6" /> },
     { number: "24/7", label: "Support Available", icon: <Clock className="w-6 h-6" /> },
-    { number: "200+", label: "Happy Students", icon: <Users className="w-6 h-6" /> },
+    { number: "20+", label: "Happy Students", icon: <Users className="w-6 h-6" /> },
   ]
 
   const techIcons = [
@@ -173,11 +173,11 @@ export default function LastMinuteLabs() {
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-[#1B262C] shadow-lg backdrop-blur-sm">
-        <div className="container mx-auto px-4 py-4">
+      <header className="sticky top-0 z-50 bg-[#032B40] shadow-lg backdrop-blur-sm">
+        <div className="container px-4 py-1">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
-              <img src="/last-minute-labs-logo.png" alt="Last Minute Labs Logo" className="w-10 h-10 mr-3" />
+              <img src="/last-minute-labs-02.png" alt="Last Minute Labs Logo" className="w-20 h-20 mr-3 scale-125" />
               <div className="text-2xl font-bold text-[#BBE1FA]">Last Minute Labs</div>
             </div>
 
@@ -187,14 +187,14 @@ export default function LastMinuteLabs() {
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
-                  className="text-[#BBE1FA] hover:text-[#3282B8] transition-all duration-300 relative group"
+                  className="text-xl text-[#BBE1FA] hover:text-[#3282B8] transition-all duration-300 relative group"
                 >
                   {item}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#3282B8] transition-all duration-300 group-hover:w-full"></span>
                 </button>
               ))}
             </nav>
-
+            
             {/* Mobile Menu Button */}
             <button
               className="md:hidden text-[#BBE1FA] hover:text-[#3282B8] transition-colors"
@@ -359,7 +359,7 @@ export default function LastMinuteLabs() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-gradient-to-br from-[#BBE1FA] to-white">
+      <section id="services" className="py-20 bg-gradient-to-br from-[#A7BBC9] to-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-[#1B262C] mb-4">Our Services</h2>
@@ -422,14 +422,14 @@ export default function LastMinuteLabs() {
               >
                 {projects.map((project, index) => (
                   <div key={index} className="w-full flex-shrink-0">
-                    <Card className="mx-4 shadow-2xl border-0 overflow-hidden">
+                    <Card className="mx-16 shadow-2xl border-0 overflow-hidden">
                       <CardContent className="p-0">
-                        <div className="md:flex">
-                          <div className="md:w-1/2 relative overflow-hidden">
+                        <div className="md:flex h-[400px]">
+                          <div className="md:w-1/2 relative overflow-hidden h-full">
                             <img
-                              src={project.image || "/placeholder.svg"}
+                              src={project.image || "/placeholder.png"}
                               alt={project.title}
-                              className="w-full h-48 md:h-full object-cover transform hover:scale-110 transition-transform duration-700"
+                              className="w-full h-full object-contain object-center"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-[#1B262C]/50 to-transparent"></div>
                           </div>
@@ -549,7 +549,7 @@ export default function LastMinuteLabs() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gradient-to-br from-[#BBE1FA] to-white">
+      <section id="contact" className="py-20 bg-gradient-to-br from-[#D5E4EE] to-white">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-16">
@@ -600,7 +600,7 @@ export default function LastMinuteLabs() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#1B262C] text-white py-12">
+      <footer className="bg-[#03283B] text-white py-12">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
@@ -616,10 +616,16 @@ export default function LastMinuteLabs() {
                 >
                   <MessageCircle className="w-6 h-6" />
                 </button>
-                <button className="text-blue-400 hover:text-blue-300 transform hover:scale-110 transition-all duration-300">
+                <button
+                  onClick={() => window.open("https://www.facebook.com/profile.php?id=61577740044753", "_blank")}
+                  className="text-blue-400 hover:text-blue-300 transform hover:scale-110 transition-all duration-300"
+                >
                   <Facebook className="w-6 h-6" />
                 </button>
-                <button className="text-pink-400 hover:text-pink-300 transform hover:scale-110 transition-all duration-300">
+                <button
+                  onClick={() => window.open("https://www.instagram.com/lastminute.labs/", "_blank")}
+                  className="text-pink-400 hover:text-pink-300 transform hover:scale-110 transition-all duration-300"
+                >
                   <Instagram className="w-6 h-6" />
                 </button>
               </div>
