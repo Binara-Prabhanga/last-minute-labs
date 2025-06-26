@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   Menu,
   X,
@@ -33,36 +33,39 @@ import {
   Globe,
   Cpu,
   HardDrive,
-} from "lucide-react"
+} from "lucide-react";
 
 export default function LastMinuteLabs() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [currentProject, setCurrentProject] = useState(0)
-  const [isVisible, setIsVisible] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [currentProject, setCurrentProject] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    setIsVisible(true)
-  }, [])
+    setIsVisible(true);
+  }, []);
 
   const services = [
     {
       icon: <Code className="w-8 h-8" />,
       title: "Web & Mobile App Development",
-      description: "React, MERN Stack, Java, Laravel applications built to your specifications",
+      description:
+        "React, MERN Stack, Java, Laravel applications built to your specifications",
       tags: ["React", "MERN", "Java", "Laravel"],
       gradient: "from-[#EAEFEF] to-[#B8CFCE]",
     },
     {
       icon: <Database className="w-8 h-8" />,
       title: "CRUD Applications",
-      description: "Complete database-driven applications with full functionality",
+      description:
+        "Complete database-driven applications with full functionality",
       tags: ["MySQL", "MongoDB", "Firebase"],
       gradient: "from-[#B8CFCE] to-[#7F8CAA]",
     },
     {
       icon: <GraduationCap className="w-8 h-8" />,
       title: "Final Year Projects & Reports",
-      description: "End-to-end project development with comprehensive documentation",
+      description:
+        "End-to-end project development with comprehensive documentation",
       tags: ["Research", "Implementation", "Documentation"],
       gradient: "from-[#7F8CAA] to-[#333446]",
     },
@@ -87,7 +90,7 @@ export default function LastMinuteLabs() {
       tags: ["Reports", "Presentations", "Viva Prep"],
       gradient: "from-[#7F8CAA] to-[#EAEFEF]",
     },
-  ]
+  ];
 
   const projects = [
     {
@@ -130,58 +133,123 @@ export default function LastMinuteLabs() {
       tag: "Web Development",
       image: "/hotel-management-systme.png?height=200&width=300",
     },
-  ]
+  ];
 
   const stats = [
-    { number: "30+", label: "Projects Completed", icon: <Target className="w-6 h-6" /> },
-    { number: "98%", label: "Success Rate", icon: <Award className="w-6 h-6" /> },
-    { number: "24/7", label: "Support Available", icon: <Clock className="w-6 h-6" /> },
-    { number: "20+", label: "Happy Students", icon: <Users className="w-6 h-6" /> },
-  ]
+    {
+      number: "30+",
+      label: "Projects Completed",
+      icon: <Target className="w-6 h-6" />,
+    },
+    {
+      number: "98%",
+      label: "Success Rate",
+      icon: <Award className="w-6 h-6" />,
+    },
+    {
+      number: "24/7",
+      label: "Support Available",
+      icon: <Clock className="w-6 h-6" />,
+    },
+    {
+      number: "20+",
+      label: "Happy Students",
+      icon: <Users className="w-6 h-6" />,
+    },
+  ];
 
   const techIcons = [
-    { icon: <Terminal className="w-8 h-8" />, x: 15, y: 20, duration: 6, delay: 0 },
-    { icon: <Laptop className="w-6 h-6" />, x: 85, y: 15, duration: 8, delay: 1 },
-    { icon: <Server className="w-7 h-7" />, x: 10, y: 70, duration: 7, delay: 2 },
-    { icon: <Globe className="w-9 h-9" />, x: 80, y: 75, duration: 9, delay: 0.5 },
-    { icon: <Cpu className="w-6 h-6" />, x: 25, y: 45, duration: 5, delay: 1.5 },
-    { icon: <HardDrive className="w-8 h-8" />, x: 70, y: 40, duration: 6.5, delay: 2.5 },
-    { icon: <Code className="w-7 h-7" />, x: 45, y: 25, duration: 7.5, delay: 3 },
-  ]
+    {
+      icon: <Terminal className="w-8 h-8" />,
+      x: 15,
+      y: 20,
+      duration: 6,
+      delay: 0,
+    },
+    {
+      icon: <Laptop className="w-6 h-6" />,
+      x: 85,
+      y: 15,
+      duration: 8,
+      delay: 1,
+    },
+    {
+      icon: <Server className="w-7 h-7" />,
+      x: 10,
+      y: 70,
+      duration: 7,
+      delay: 2,
+    },
+    {
+      icon: <Globe className="w-9 h-9" />,
+      x: 80,
+      y: 75,
+      duration: 9,
+      delay: 0.5,
+    },
+    {
+      icon: <Cpu className="w-6 h-6" />,
+      x: 25,
+      y: 45,
+      duration: 5,
+      delay: 1.5,
+    },
+    {
+      icon: <HardDrive className="w-8 h-8" />,
+      x: 70,
+      y: 40,
+      duration: 6.5,
+      delay: 2.5,
+    },
+    {
+      icon: <Code className="w-7 h-7" />,
+      x: 45,
+      y: 25,
+      duration: 7.5,
+      delay: 3,
+    },
+  ];
 
   const nextProject = () => {
-    setCurrentProject((prev) => (prev + 1) % projects.length)
-  }
+    setCurrentProject((prev) => (prev + 1) % projects.length);
+  };
 
   const prevProject = () => {
-    setCurrentProject((prev) => (prev - 1 + projects.length) % projects.length)
-  }
+    setCurrentProject((prev) => (prev - 1 + projects.length) % projects.length);
+  };
 
   useEffect(() => {
-    const timer = setInterval(nextProject, 5000)
-    return () => clearInterval(timer)
-  }, [])
+    const timer = setInterval(nextProject, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
+    const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      element.scrollIntoView({ behavior: "smooth" });
     }
-    setIsMenuOpen(false)
-  }
+    setIsMenuOpen(false);
+  };
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Header */}
       <header className="sticky top-0 z-50 bg-[#032B40] shadow-lg backdrop-blur-sm">
-        <div className="container px-4 py-1">
-          <div className="flex items-center justify-between">
+        <div className="container px-4 py-1 w-full">
+          <div className="flex items-center justify-between w-full">
+            {/* Logo on the left */}
             <div className="flex items-center">
-              <img src="/last-minute-labs-02.png" alt="Last Minute Labs Logo" className="w-20 h-20 mr-3 scale-125" />
-              <div className="text-2xl font-bold text-[#BBE1FA]">Last Minute Labs</div>
+              <img
+                src="/last-minute-labs-02.png"
+                alt="Last Minute Labs Logo"
+                className="w-20 h-20 mr-3 scale-125"
+              />
+              <div className="text-2xl font-bold text-[#BBE1FA]">
+                Last Minute Labs
+              </div>
             </div>
 
-            {/* Desktop Navigation */}
+            {/* Desktop Navigation aligned to right */}
             <nav className="hidden md:flex space-x-8">
               {["Home", "Services", "About", "Contact"].map((item) => (
                 <button
@@ -194,13 +262,17 @@ export default function LastMinuteLabs() {
                 </button>
               ))}
             </nav>
-            
+
             {/* Mobile Menu Button */}
             <button
               className="md:hidden text-[#BBE1FA] hover:text-[#3282B8] transition-colors"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
 
@@ -264,7 +336,9 @@ export default function LastMinuteLabs() {
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
-                  animation: `particle-float ${3 + Math.random() * 4}s linear infinite`,
+                  animation: `particle-float ${
+                    3 + Math.random() * 4
+                  }s linear infinite`,
                   animationDelay: `${Math.random() * 5}s`,
                 }}
               />
@@ -274,52 +348,105 @@ export default function LastMinuteLabs() {
 
         <style jsx>{`
           @keyframes float-0 {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(5deg); }
+            0%,
+            100% {
+              transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+              transform: translateY(-20px) rotate(5deg);
+            }
           }
           @keyframes float-1 {
-            0%, 100% { transform: translateX(0px) translateY(0px) rotate(0deg); }
-            33% { transform: translateX(10px) translateY(-15px) rotate(-3deg); }
-            66% { transform: translateX(-5px) translateY(-10px) rotate(3deg); }
+            0%,
+            100% {
+              transform: translateX(0px) translateY(0px) rotate(0deg);
+            }
+            33% {
+              transform: translateX(10px) translateY(-15px) rotate(-3deg);
+            }
+            66% {
+              transform: translateX(-5px) translateY(-10px) rotate(3deg);
+            }
           }
           @keyframes float-2 {
-            0%, 100% { transform: translateY(0px) scale(1); }
-            50% { transform: translateY(-25px) scale(1.1); }
+            0%,
+            100% {
+              transform: translateY(0px) scale(1);
+            }
+            50% {
+              transform: translateY(-25px) scale(1.1);
+            }
           }
           @keyframes float-3 {
-            0%, 100% { transform: translateX(0px) translateY(0px) rotate(0deg); }
-            25% { transform: translateX(-8px) translateY(-12px) rotate(2deg); }
-            75% { transform: translateX(8px) translateY(-18px) rotate(-2deg); }
+            0%,
+            100% {
+              transform: translateX(0px) translateY(0px) rotate(0deg);
+            }
+            25% {
+              transform: translateX(-8px) translateY(-12px) rotate(2deg);
+            }
+            75% {
+              transform: translateX(8px) translateY(-18px) rotate(-2deg);
+            }
           }
           @keyframes float-4 {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-15px) rotate(-5deg); }
+            0%,
+            100% {
+              transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+              transform: translateY(-15px) rotate(-5deg);
+            }
           }
           @keyframes float-5 {
-            0%, 100% { transform: translateX(0px) translateY(0px) scale(1); }
-            33% { transform: translateX(12px) translateY(-20px) scale(0.9); }
-            66% { transform: translateX(-8px) translateY(-8px) scale(1.1); }
+            0%,
+            100% {
+              transform: translateX(0px) translateY(0px) scale(1);
+            }
+            33% {
+              transform: translateX(12px) translateY(-20px) scale(0.9);
+            }
+            66% {
+              transform: translateX(-8px) translateY(-8px) scale(1.1);
+            }
           }
           @keyframes float-6 {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-22px) rotate(8deg); }
+            0%,
+            100% {
+              transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+              transform: translateY(-22px) rotate(8deg);
+            }
           }
           @keyframes particle-float {
-            0% { transform: translateY(100vh) opacity(0); }
-            10% { opacity: 0.4; }
-            90% { opacity: 0.4; }
-            100% { transform: translateY(-100px) opacity(0); }
+            0% {
+              transform: translateY(100vh) opacity(0);
+            }
+            10% {
+              opacity: 0.4;
+            }
+            90% {
+              opacity: 0.4;
+            }
+            100% {
+              transform: translateY(-100px) opacity(0);
+            }
           }
         `}</style>
 
         <div
-          className={`relative container mx-auto px-4 text-center transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
+          className={`relative container mx-auto px-4 text-center transition-all duration-1000 ${
+            isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+          }`}
         >
           <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            Struggling With Your <span className="text-[#3282B8] animate-pulse">IT Assignment?</span>
+            Struggling With Your{" "}
+            <span className="text-[#3282B8] animate-pulse">IT Assignment?</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-[#BBE1FA] max-w-3xl mx-auto leading-relaxed">
-            We help students finish their toughest university projects — on time, with confidence.
+            We help students finish their toughest university projects — on
+            time, with confidence.
           </p>
 
           {/* Stats Row */}
@@ -329,8 +456,12 @@ export default function LastMinuteLabs() {
                 key={index}
                 className="text-center p-4 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20"
               >
-                <div className="text-[#3282B8] mb-2 flex justify-center">{stat.icon}</div>
-                <div className="text-2xl font-bold text-white">{stat.number}</div>
+                <div className="text-[#3282B8] mb-2 flex justify-center">
+                  {stat.icon}
+                </div>
+                <div className="text-2xl font-bold text-white">
+                  {stat.number}
+                </div>
                 <div className="text-sm text-[#BBE1FA]">{stat.label}</div>
               </div>
             ))}
@@ -359,12 +490,18 @@ export default function LastMinuteLabs() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-gradient-to-br from-[#A7BBC9] to-white">
+      <section
+        id="services"
+        className="py-20 bg-gradient-to-br from-[#A7BBC9] to-white"
+      >
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#1B262C] mb-4">Our Services</h2>
+            <h2 className="text-4xl font-bold text-[#1B262C] mb-4">
+              Our Services
+            </h2>
             <p className="text-xl text-[#0F4C75] max-w-2xl mx-auto">
-              From simple assignments to complex final year projects, we've got you covered
+              From simple assignments to complex final year projects, we've got
+              you covered
             </p>
           </div>
 
@@ -408,9 +545,12 @@ export default function LastMinuteLabs() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#1B262C] mb-4">Our Recent Projects</h2>
+            <h2 className="text-4xl font-bold text-[#1B262C] mb-4">
+              Our Recent Projects
+            </h2>
             <p className="text-xl text-[#0F4C75] max-w-3xl mx-auto">
-              From CRUD apps to final year research – here's what we've done for students like you.
+              From CRUD apps to final year research – here's what we've done for
+              students like you.
             </p>
           </div>
 
@@ -440,10 +580,14 @@ export default function LastMinuteLabs() {
                               </span>
                               <div className="flex items-center text-green-600">
                                 <CheckCircle className="w-4 h-4 mr-1" />
-                                <span className="text-sm">{project.status}</span>
+                                <span className="text-sm">
+                                  {project.status}
+                                </span>
                               </div>
                             </div>
-                            <h3 className="text-2xl font-bold text-[#1B262C] mb-3">{project.title}</h3>
+                            <h3 className="text-2xl font-bold text-[#1B262C] mb-3">
+                              {project.title}
+                            </h3>
                             <div className="space-y-2 mb-4">
                               <div className="flex items-center text-[#0F4C75]">
                                 <Code className="w-4 h-4 mr-2" />
@@ -456,9 +600,14 @@ export default function LastMinuteLabs() {
                             </div>
                             <div className="flex items-center">
                               {[...Array(5)].map((_, i) => (
-                                <Star key={i} className="w-4 h-4 text-[#3282B8] fill-current" />
+                                <Star
+                                  key={i}
+                                  className="w-4 h-4 text-[#3282B8] fill-current"
+                                />
                               ))}
-                              <span className="ml-2 text-[#0F4C75] text-sm">Student Satisfied</span>
+                              <span className="ml-2 text-[#0F4C75] text-sm">
+                                Student Satisfied
+                              </span>
                             </div>
                           </div>
                         </div>
@@ -490,7 +639,9 @@ export default function LastMinuteLabs() {
                   key={index}
                   onClick={() => setCurrentProject(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    index === currentProject ? "bg-[#3282B8] scale-125" : "bg-[#BBE1FA] hover:bg-[#3282B8]"
+                    index === currentProject
+                      ? "bg-[#3282B8] scale-125"
+                      : "bg-[#BBE1FA] hover:bg-[#3282B8]"
                   }`}
                 />
               ))}
@@ -506,10 +657,13 @@ export default function LastMinuteLabs() {
       >
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-8 text-[#BBE1FA]">About Last Minute Labs</h2>
+            <h2 className="text-4xl font-bold mb-8 text-[#BBE1FA]">
+              About Last Minute Labs
+            </h2>
             <p className="text-xl text-[#BBE1FA] mb-12 leading-relaxed">
-              Born out of the chaos of deadline nights, we are a team of developers who know what students need. We
-              offer student-friendly, plagiarism-safe, presentable work with end-to-end support.
+              Born out of the chaos of deadline nights, we are a team of
+              developers who know what students need. We offer student-friendly,
+              plagiarism-safe, presentable work with end-to-end support.
             </p>
 
             <div className="grid md:grid-cols-3 gap-8">
@@ -539,7 +693,9 @@ export default function LastMinuteLabs() {
                   >
                     <div className="text-[#1B262C]">{item.icon}</div>
                   </div>
-                  <h3 className="text-xl font-semibold mb-2 text-[#BBE1FA]">{item.title}</h3>
+                  <h3 className="text-xl font-semibold mb-2 text-[#BBE1FA]">
+                    {item.title}
+                  </h3>
                   <p className="text-[#3282B8]">{item.desc}</p>
                 </div>
               ))}
@@ -549,13 +705,19 @@ export default function LastMinuteLabs() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gradient-to-br from-[#D5E4EE] to-white">
+      <section
+        id="contact"
+        className="py-20 bg-gradient-to-br from-[#D5E4EE] to-white"
+      >
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-[#1B262C] mb-4">Let's Finish That Project</h2>
+              <h2 className="text-4xl font-bold text-[#1B262C] mb-4">
+                Let's Finish That Project
+              </h2>
               <p className="text-xl text-[#0F4C75]">
-                Ready to get started? Message us on WhatsApp for the fastest response!
+                Ready to get started? Message us on WhatsApp for the fastest
+                response!
               </p>
             </div>
 
@@ -564,13 +726,19 @@ export default function LastMinuteLabs() {
               <div className="bg-gradient-to-br from-green-50 to-green-100 border border-green-200 rounded-xl p-8 mb-8 shadow-lg hover:shadow-xl transition-shadow">
                 <div className="flex items-center justify-center mb-4">
                   <MessageCircle className="w-8 h-8 text-green-600 mr-3" />
-                  <h3 className="text-2xl font-semibold text-[#1B262C]">WhatsApp Us</h3>
+                  <h3 className="text-2xl font-semibold text-[#1B262C]">
+                    WhatsApp Us
+                  </h3>
                 </div>
-                <p className="text-[#0F4C75] mb-6">Get instant responses and quick project quotes</p>
+                <p className="text-[#0F4C75] mb-6">
+                  Get instant responses and quick project quotes
+                </p>
                 <Button
                   size="lg"
                   className="bg-green-600 hover:bg-green-700 text-white transform hover:scale-105 transition-all duration-300 shadow-lg"
-                  onClick={() => window.open("https://wa.me/94771909141", "_blank")}
+                  onClick={() =>
+                    window.open("https://wa.me/94771909141", "_blank")
+                  }
                 >
                   <MessageCircle className="w-5 h-5 mr-2" />
                   Message: +94 77 190 9141
@@ -578,19 +746,25 @@ export default function LastMinuteLabs() {
               </div>
 
               <div className="text-center">
-                <p className="text-lg font-semibold text-[#1B262C] mb-2">Why WhatsApp?</p>
+                <p className="text-lg font-semibold text-[#1B262C] mb-2">
+                  Why WhatsApp?
+                </p>
                 <div className="grid grid-cols-2 gap-4 max-w-md mx-auto">
                   <div className="flex items-center text-[#0F4C75]">
-                    <CheckCircle className="w-4 h-4 mr-2 text-green-600" /> Instant responses
+                    <CheckCircle className="w-4 h-4 mr-2 text-green-600" />{" "}
+                    Instant responses
                   </div>
                   <div className="flex items-center text-[#0F4C75]">
-                    <CheckCircle className="w-4 h-4 mr-2 text-green-600" /> Share files easily
+                    <CheckCircle className="w-4 h-4 mr-2 text-green-600" />{" "}
+                    Share files easily
                   </div>
                   <div className="flex items-center text-[#0F4C75]">
-                    <CheckCircle className="w-4 h-4 mr-2 text-green-600" /> Real-time updates
+                    <CheckCircle className="w-4 h-4 mr-2 text-green-600" />{" "}
+                    Real-time updates
                   </div>
                   <div className="flex items-center text-[#0F4C75]">
-                    <CheckCircle className="w-4 h-4 mr-2 text-green-600" /> Available 24/7
+                    <CheckCircle className="w-4 h-4 mr-2 text-green-600" />{" "}
+                    Available 24/7
                   </div>
                 </div>
               </div>
@@ -605,25 +779,45 @@ export default function LastMinuteLabs() {
           <div className="grid md:grid-cols-3 gap-8">
             <div>
               <div className="flex items-center mb-4">
-                <img src="/last-minute-labs-logo.png" alt="Last Minute Labs Logo" className="w-8 h-8 mr-3" />
-                <h3 className="text-2xl font-bold text-[#3282B8]">Last Minute Labs</h3>
+                <img
+                  src="/last-minute-labs-logo.png"
+                  alt="Last Minute Labs Logo"
+                  className="w-8 h-8 mr-3"
+                />
+                <h3 className="text-2xl font-bold text-[#3282B8]">
+                  Last Minute Labs
+                </h3>
               </div>
-              <p className="text-[#BBE1FA] mb-4">Helping students succeed with quality academic project support.</p>
+              <p className="text-[#BBE1FA] mb-4">
+                Helping students succeed with quality academic project support.
+              </p>
               <div className="flex space-x-4">
                 <button
-                  onClick={() => window.open("https://wa.me/94771909141", "_blank")}
+                  onClick={() =>
+                    window.open("https://wa.me/94771909141", "_blank")
+                  }
                   className="text-green-400 hover:text-green-300 transform hover:scale-110 transition-all duration-300"
                 >
                   <MessageCircle className="w-6 h-6" />
                 </button>
                 <button
-                  onClick={() => window.open("https://www.facebook.com/profile.php?id=61577740044753", "_blank")}
+                  onClick={() =>
+                    window.open(
+                      "https://www.facebook.com/profile.php?id=61577740044753",
+                      "_blank"
+                    )
+                  }
                   className="text-blue-400 hover:text-blue-300 transform hover:scale-110 transition-all duration-300"
                 >
                   <Facebook className="w-6 h-6" />
                 </button>
                 <button
-                  onClick={() => window.open("https://www.instagram.com/lastminute.labs/", "_blank")}
+                  onClick={() =>
+                    window.open(
+                      "https://www.instagram.com/lastminute.labs/",
+                      "_blank"
+                    )
+                  }
                   className="text-pink-400 hover:text-pink-300 transform hover:scale-110 transition-all duration-300"
                 >
                   <Instagram className="w-6 h-6" />
@@ -632,7 +826,9 @@ export default function LastMinuteLabs() {
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold mb-4 text-[#3282B8]">Quick Links</h4>
+              <h4 className="text-lg font-semibold mb-4 text-[#3282B8]">
+                Quick Links
+              </h4>
               <ul className="space-y-2">
                 {["Services", "About", "Contact"].map((item) => (
                   <li key={item}>
@@ -649,7 +845,9 @@ export default function LastMinuteLabs() {
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold mb-4 text-[#3282B8]">Contact Info</h4>
+              <h4 className="text-lg font-semibold mb-4 text-[#3282B8]">
+                Contact Info
+              </h4>
               <div className="space-y-2">
                 <div className="flex items-center">
                   <Phone className="w-4 h-4 mr-2 text-[#3282B8]" />
@@ -657,20 +855,25 @@ export default function LastMinuteLabs() {
                 </div>
                 <div className="flex items-center">
                   <MessageCircle className="w-4 h-4 mr-2 text-[#3282B8]" />
-                  <span className="text-[#BBE1FA]">WhatsApp Available 24/7</span>
+                  <span className="text-[#BBE1FA]">
+                    WhatsApp Available 24/7
+                  </span>
                 </div>
               </div>
             </div>
           </div>
 
           <div className="border-t border-[#0F4C75] mt-8 pt-8 text-center">
-            <p className="text-[#BBE1FA] mb-2">© 2024 Last Minute Labs. All rights reserved.</p>
+            <p className="text-[#BBE1FA] mb-2">
+              © 2024 Last Minute Labs. All rights reserved.
+            </p>
             <p className="text-sm text-[#3282B8]">
-              <strong>Disclaimer:</strong> We provide academic support services for educational use only.
+              <strong>Disclaimer:</strong> We provide academic support services
+              for educational use only.
             </p>
           </div>
         </div>
       </footer>
     </div>
-  )
+  );
 }
