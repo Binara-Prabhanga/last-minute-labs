@@ -6,11 +6,21 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./lib/**/*.{js,ts,jsx,tsx,mdx}",
     "*.{js,ts,jsx,tsx,mdx}"
   ],
   theme: {
   	extend: {
+  		fontFamily: {
+  			sans: ['var(--font-sans)', 'system-ui', 'sans-serif']
+  		},
   		colors: {
+  			ink: '#0D2236',
+  			lab: { DEFAULT: '#2C76AB', deep: '#1B5483' },
+  			sky: '#D6E8F5',
+  			paper: '#F2F7FB',
+  			signal: '#FF4B2B',
+  			wa: { DEFAULT: '#25D366', deep: '#128C4A' },
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
