@@ -59,7 +59,7 @@ export function Process() {
 
   return (
     <section id="process" className="mx-auto max-w-6xl px-5 py-20 md:py-28">
-      <h2 className="max-w-[18ch] text-[clamp(2.25rem,5vw,3.75rem)] font-extrabold leading-[0.98] tracking-[-0.022em] text-balance">
+      <h2 className="max-w-[18ch] text-[clamp(2.25rem,5vw,3.75rem)] font-semibold leading-[0.98] tracking-[-0.022em] text-balance">
         Three steps from panic to submitted
       </h2>
 
@@ -67,8 +67,8 @@ export function Process() {
         {/* Desktop path */}
         <div className="relative mb-2 hidden h-[140px] md:block" aria-hidden="true">
           <svg viewBox={`0 0 ${VB_W} ${VB_H}`} preserveAspectRatio="none" className="absolute inset-0 h-full w-full overflow-visible">
-            <path d={PATH} fill="none" stroke="var(--ink)" strokeOpacity="0.2" strokeWidth="5" strokeDasharray="2 12" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
-            <path ref={path} d={PATH} fill="none" stroke="var(--ink)" strokeWidth="5" strokeLinecap="round" vectorEffect="non-scaling-stroke" pathLength={1} strokeDasharray="1" strokeDashoffset={1 - eased} />
+            <path d={PATH} fill="none" stroke="var(--ink)" strokeOpacity="0.25" strokeWidth="2" strokeDasharray="1 9" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
+            <path ref={path} d={PATH} fill="none" stroke="var(--lab-deep)" strokeWidth="2.5" strokeLinecap="round" vectorEffect="non-scaling-stroke" pathLength={1} strokeDasharray="1" strokeDashoffset={1 - eased} />
           </svg>
           {[0, 1, 2].map((i) => (
             <span
@@ -78,8 +78,8 @@ export function Process() {
             >
               <span
                 key={String(reached(i))}
-                className={`grid h-14 w-14 place-items-center rounded-full border-[3px] border-ink text-xl font-extrabold shadow-[0_4px_0_var(--ink)] ${
-                  reached(i) ? "anim-pop bg-signal text-white" : "bg-white text-ink"
+                className={`grid h-12 w-12 place-items-center rounded-full border text-lg font-semibold shadow-soft transition-colors duration-200 ${
+                  reached(i) ? "anim-pop border-lab-deep bg-lab-deep text-white" : "border-ink/15 bg-white text-ink"
                 }`}
               >
                 {i + 1}
@@ -88,7 +88,7 @@ export function Process() {
           ))}
           {/* Follow-through: the dot lags the scroll a touch, so it trails the line instead of stapling to it */}
           <span
-            className="absolute h-5 w-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-ink bg-wa transition-[left,top] duration-300 [transition-timing-function:var(--ease-out)]"
+            className="absolute h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-white bg-signal shadow-soft transition-[left,top] duration-300 [transition-timing-function:var(--ease-out)]"
             style={{ left: `${dot.x}%`, top: `${dot.y}%` }}
           />
         </div>
@@ -96,11 +96,11 @@ export function Process() {
         <ol className="grid gap-10 md:grid-cols-3 md:gap-8">
           {STEPS.map((s, i) => (
             <li key={s.title} className="relative flex gap-5 md:block md:text-center">
-              <span className="grid h-14 w-14 shrink-0 place-items-center rounded-full border-[3px] border-ink bg-white text-xl font-extrabold shadow-[0_4px_0_var(--ink)] md:hidden">
+              <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-ink/15 bg-white text-lg font-semibold shadow-soft md:hidden">
                 {i + 1}
               </span>
               <div>
-                <h3 className="text-2xl font-extrabold leading-tight tracking-tight">{s.title}</h3>
+                <h3 className="text-2xl font-semibold leading-tight tracking-tight">{s.title}</h3>
                 <p className="mx-auto mt-2 max-w-[34ch] text-lg leading-snug text-ink/75">{s.body}</p>
               </div>
             </li>

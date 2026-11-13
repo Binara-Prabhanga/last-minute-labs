@@ -60,7 +60,6 @@ export const SERVICES = [
     title: "Web & mobile apps",
     description: "Built to your spec, in the stack your university expects.",
     tags: ["React", "MERN", "Java", "Laravel"],
-    tone: "bg-lab text-white",
   },
   {
     key: "crud",
@@ -68,7 +67,6 @@ export const SERVICES = [
     title: "CRUD applications",
     description: "Database-driven apps where every create, read, update and delete works.",
     tags: ["MySQL", "MongoDB", "Firebase"],
-    tone: "bg-signal text-white",
   },
   {
     key: "fyp",
@@ -76,7 +74,6 @@ export const SERVICES = [
     title: "Final year projects & reports",
     description: "From research to implementation to the written report.",
     tags: ["Research", "Implementation", "Documentation"],
-    tone: "bg-ink text-white",
   },
   {
     key: "ml",
@@ -84,7 +81,6 @@ export const SERVICES = [
     title: "Machine learning mini projects",
     description: "Models, data analysis and prediction systems you can explain.",
     tags: ["Python", "TensorFlow", "Scikit-learn"],
-    tone: "bg-wa text-ink",
   },
   {
     key: "ux",
@@ -92,7 +88,27 @@ export const SERVICES = [
     title: "UI/UX design",
     description: "Screens and clickable prototypes that look designed, not assembled.",
     tags: ["Figma", "Adobe XD", "Prototyping"],
-    tone: "bg-sky text-ink",
+  },
+  {
+    key: "portfolio",
+    icon: "Globe",
+    title: "Portfolio websites",
+    description: "A clean personal site that shows your work properly, ready to share with recruiters.",
+    tags: ["Responsive", "Your projects", "Your domain"],
+  },
+  {
+    key: "demo",
+    icon: "Video",
+    title: "Demo video creation",
+    description: "A clear walkthrough of your project for submissions, vivas and your portfolio.",
+    tags: ["Screen recording", "Voiceover", "Editing"],
+  },
+  {
+    key: "animation",
+    icon: "Clapperboard",
+    title: "Simple animation videos",
+    description: "Short explainer and presentation animations that keep your audience watching.",
+    tags: ["Explainers", "Motion graphics", "Presentations"],
   },
   {
     key: "docs",
@@ -100,7 +116,6 @@ export const SERVICES = [
     title: "Documentation & viva slides",
     description: "Reports and slide decks, plus help rehearsing your answers.",
     tags: ["Reports", "Presentations", "Viva prep"],
-    tone: "bg-lab-deep text-white",
   },
 ] as const;
 

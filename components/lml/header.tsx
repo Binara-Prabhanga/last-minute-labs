@@ -18,15 +18,15 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 bg-paper/90 backdrop-blur transition-[border-color] duration-200 border-b-[3px] ${
-        scrolled ? "border-ink" : "border-transparent"
+      className={`sticky top-0 z-50 bg-paper/90 backdrop-blur transition-[border-color] duration-200 border-b ${
+        scrolled ? "border-ink/10" : "border-transparent"
       }`}
     >
       <div className="mx-auto flex h-20 max-w-6xl items-center justify-between gap-4 px-5">
         {/* Logo on the left, links in the middle/right, action far right: the layout everyone already knows. */}
         <a href="#home" className="flex items-center gap-3" aria-label="Last Minute Labs, back to top">
           <img src="/logo-mark.png" alt="" width={56} height={35} className="h-8 w-auto sm:h-9" />
-          <span className="whitespace-nowrap text-base font-extrabold tracking-tight sm:text-xl">Last Minute Labs</span>
+          <span className="whitespace-nowrap text-base font-semibold tracking-tight sm:text-xl">Last Minute Labs</span>
         </a>
 
         <nav aria-label="Main" className="hidden items-center gap-1 md:flex">
@@ -37,7 +37,7 @@ export function Header() {
               className="group relative rounded-xl px-4 py-3 text-base font-semibold"
             >
               {item.label}
-              <span className="absolute inset-x-4 bottom-1.5 h-[3px] origin-left scale-x-0 rounded-full bg-signal transition-transform duration-300 [transition-timing-function:var(--ease-out)] group-hover:scale-x-100" />
+              <span className="absolute inset-x-4 bottom-1.5 h-[2px] origin-left scale-x-0 rounded-full bg-lab transition-transform duration-300 [transition-timing-function:var(--ease-out)] group-hover:scale-x-100" />
             </a>
           ))}
         </nav>
@@ -54,7 +54,7 @@ export function Header() {
           </a>
           <button
             type="button"
-            className="grid h-12 w-12 place-items-center rounded-xl border-[3px] border-ink bg-white md:hidden"
+            className="grid h-12 w-12 place-items-center rounded-xl border border-ink/15 bg-white md:hidden"
             aria-expanded={open}
             aria-controls="mobile-nav"
             aria-label={open ? "Close menu" : "Open menu"}
@@ -66,7 +66,7 @@ export function Header() {
       </div>
 
       {open && (
-        <nav id="mobile-nav" aria-label="Mobile" className="border-t-[3px] border-ink bg-paper md:hidden">
+        <nav id="mobile-nav" aria-label="Mobile" className="border-t border-ink/10 bg-paper md:hidden">
           <ul className="mx-auto max-w-6xl px-5 py-2">
             {NAV.map((item) => (
               <li key={item.href}>

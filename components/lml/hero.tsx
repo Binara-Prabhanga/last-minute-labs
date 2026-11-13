@@ -86,7 +86,7 @@ export function Hero() {
 
       <div className="relative mx-auto grid max-w-6xl items-center gap-x-12 gap-y-6 px-5 pb-16 pt-10 lg:grid-cols-[1.05fr_0.95fr] lg:pb-24 lg:pt-16">
         <div className="lg:col-start-1 lg:row-start-1 lg:self-end">
-          <h1 className="text-balance text-[clamp(2.75rem,7.2vw,5.5rem)] font-extrabold leading-[0.95] tracking-[-0.025em]">
+          <h1 className="text-balance text-[clamp(2.75rem,7.2vw,5.5rem)] font-semibold leading-[0.95] tracking-[-0.02em]">
             <span className="anim-rise block" style={{ animationDelay: "650ms" }}>
               Deadline close?
             </span>
@@ -123,7 +123,7 @@ export function Hero() {
                       className="peer sr-only"
                     />
                     <span className="chip">
-                      <span className="text-lg font-extrabold leading-none">{opt.label}</span>
+                      <span className="text-lg font-semibold leading-none">{opt.label}</span>
                       <span className="text-sm leading-tight opacity-70">{opt.hint}</span>
                     </span>
                   </label>
@@ -135,9 +135,9 @@ export function Hero() {
             <div
               key={d.id}
               aria-live="polite"
-              className="anim-pop mt-6 rounded-2xl border-[3px] border-ink bg-white p-5 shadow-[0_6px_0_var(--ink)]"
+              className="anim-pop mt-6 rounded-2xl border border-ink/15 bg-white p-5 shadow-soft"
             >
-              <p className="text-xl font-extrabold leading-tight">{d.title}</p>
+              <p className="text-xl font-semibold leading-tight">{d.title}</p>
               <p className="mt-1.5 max-w-[46ch] text-base leading-relaxed text-ink/80">{d.body}</p>
             </div>
 

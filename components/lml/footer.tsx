@@ -2,12 +2,12 @@ import { NAV } from "@/lib/site";
 
 export function Footer() {
   return (
-    <footer className="border-t-[3px] border-ink bg-white pb-28 md:pb-0">
+    <footer className="border-t border-ink/10 bg-white pb-28 md:pb-0">
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-5 py-12 md:flex-row md:items-start md:justify-between">
         <div className="max-w-sm">
           <div className="flex items-center gap-3">
             <img src="/logo-mark.png" alt="" width={56} height={35} className="h-8 w-auto" />
-            <span className="text-xl font-extrabold tracking-tight">Last Minute Labs</span>
+            <span className="text-xl font-semibold tracking-tight">Last Minute Labs</span>
           </div>
           <p className="mt-3 text-base leading-snug text-ink/75">
             Helping students succeed with quality academic project support.

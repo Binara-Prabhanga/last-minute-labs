@@ -28,18 +28,19 @@ export function Contact() {
 
   return (
     <section id="contact" className="mx-auto max-w-6xl px-5 py-20 md:py-28">
-      <div className="relative overflow-hidden rounded-[2rem] border-[3px] border-ink bg-wa p-8 shadow-[0_10px_0_var(--ink)] md:p-14">
+      <div className="relative overflow-hidden rounded-3xl bg-ink p-8 text-white shadow-lift md:p-14">
         {/* A big stopwatch cropped out of the corner: the brand mark as a texture, not a logo */}
-        <svg viewBox="0 0 200 200" aria-hidden="true" className="pointer-events-none absolute -bottom-24 -right-20 h-80 w-80 opacity-20 md:h-[28rem] md:w-[28rem]">
-          <circle cx="100" cy="100" r="86" fill="none" stroke="var(--ink)" strokeWidth="12" />
-          <path d="M100 100 L100 40 M100 100 L140 124" stroke="var(--ink)" strokeWidth="12" strokeLinecap="round" />
+        <svg viewBox="0 0 200 200" aria-hidden="true" className="pointer-events-none absolute -bottom-24 -right-20 h-80 w-80 md:h-[28rem] md:w-[28rem]">
+          <circle cx="100" cy="100" r="86" fill="none" stroke="#fff" strokeOpacity="0.08" strokeWidth="3" />
+          <circle cx="100" cy="100" r="72" fill="none" stroke="#fff" strokeOpacity="0.05" strokeWidth="1.5" />
+          <path d="M100 100 L100 40 M100 100 L140 124" stroke="#fff" strokeOpacity="0.1" strokeWidth="3" strokeLinecap="round" />
         </svg>
 
         <div className="relative">
-          <h2 className="max-w-[14ch] text-[clamp(2.5rem,6vw,4.75rem)] font-extrabold leading-[0.95] tracking-[-0.025em] text-balance">
+          <h2 className="max-w-[14ch] text-[clamp(2.5rem,6vw,4.5rem)] font-semibold leading-[1] tracking-[-0.03em] text-balance">
             Send us the brief.
           </h2>
-          <p className="mt-5 max-w-[40ch] text-xl leading-snug">
+          <p className="mt-5 max-w-[40ch] text-xl leading-snug text-white/75">
             Share the topic, the requirements and your deadline. You&apos;ll get a quote and a straight answer on timing.
           </p>
 
@@ -48,7 +49,7 @@ export function Contact() {
               href={wa("Hi Last Minute Labs, I'd like a quote for my project. My deadline is ")}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn--ink wind-host !min-h-16 text-xl"
+              className="btn wind-host !min-h-16 text-xl"
             >
               <WhatsAppIcon className="h-7 w-7" />
               Message us on WhatsApp
@@ -61,7 +62,7 @@ export function Contact() {
               {copied ? "Copied" : PHONE_DISPLAY}
             </button>
           </div>
-          <p id="copy-status" role="status" className="mt-3 min-h-6 text-base font-semibold">
+          <p id="copy-status" role="status" className="mt-3 min-h-6 text-base font-medium text-white/80">
             {copied && "Number copied. Paste it into WhatsApp or your contacts."}
             {failed && `Couldn't copy automatically. Our number is ${PHONE_DISPLAY}.`}
           </p>

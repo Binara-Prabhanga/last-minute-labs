@@ -3,23 +3,25 @@
 @tailwind utilities;
 
 /* ───────────────────────── Last Minute Labs design tokens ─────────────────────────
-   Light source: top-left. Every solid shadow falls down and slightly right, so
-   objects (buttons, cards, the stopwatch) read as one consistent set of volumes. */
+   Calm, precise, a little warm. Light comes from the top: shadows are soft and fall down.
+   Motion keeps every classic principle but at a grown-up amplitude. */
 :root {
-  --ink: #0d2236;
-  --lab: #2c76ab;
-  --lab-deep: #1b5483;
-  --sky: #d6e8f5;
-  --paper: #f2f7fb;
-  --signal: #ff4b2b;
-  --wa: #25d366;
+  --ink: #0b1b2b;
+  --lab: #2a6fa8;
+  --lab-deep: #164b78;
+  --sky: #e4eef7;
+  --paper: #f6f8fb;
+  --signal: #d9442b;
+  --wa: #128c4a;
 
-  /* Motion vocabulary. Nothing in this site moves linearly. */
+  --shadow-soft: 0 1px 2px rgba(11, 27, 43, 0.06), 0 6px 16px -6px rgba(11, 27, 43, 0.14);
+  --shadow-lift: 0 2px 4px rgba(11, 27, 43, 0.05), 0 24px 48px -16px rgba(11, 27, 43, 0.28);
+
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1); /* slow out: arrivals */
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1); /* slow in + slow out */
-  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1); /* overshoot: follow-through */
-  --ease-anticipate: cubic-bezier(0.68, -0.55, 0.27, 1.55); /* wind-up, then release */
-  --t-snap: 160ms; /* feedback is always under the 400ms Doherty threshold */
+  --ease-spring: cubic-bezier(0.3, 1.25, 0.5, 1); /* gentle overshoot: follow-through */
+  --ease-anticipate: cubic-bezier(0.6, -0.28, 0.35, 1.2); /* small wind-up, then release */
+  --t-snap: 170ms; /* feedback stays well under the 400ms Doherty threshold */
 }
 
 html {
@@ -36,7 +38,7 @@ body {
 }
 
 :focus-visible {
-  outline: 3px solid var(--signal);
+  outline: 2px solid var(--lab);
   outline-offset: 3px;
   border-radius: 6px;
 }
@@ -48,7 +50,6 @@ body {
 }
 
 @layer components {
-  /* Solid, chunky button. The bottom "ledge" is the 3D: it compresses on press. */
   .btn {
     display: inline-flex;
     align-items: center;
@@ -56,53 +57,51 @@ body {
     gap: 0.65rem;
     min-height: 3.5rem; /* 56px: comfortable thumb target */
     padding: 0 1.6rem;
-    border: 3px solid var(--ink);
-    border-radius: 1.1rem;
+    border: 1px solid rgba(11, 27, 43, 0.08);
+    border-radius: 0.85rem;
     background: var(--wa);
-    color: var(--ink);
-    font-weight: 700;
+    color: #fff;
+    font-weight: 600;
     font-size: 1.0625rem;
     line-height: 1;
-    box-shadow: 0 6px 0 var(--ink);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 1px 2px rgba(11, 27, 43, 0.2),
+      0 10px 22px -10px rgba(18, 140, 74, 0.65);
     transform-origin: 50% 100%;
-    transition: transform var(--t-snap) var(--ease-spring),
-      box-shadow var(--t-snap) var(--ease-out);
+    transition: transform var(--t-snap) var(--ease-spring), box-shadow var(--t-snap) var(--ease-out),
+      filter var(--t-snap) var(--ease-out);
     cursor: pointer;
     text-decoration: none;
     -webkit-tap-highlight-color: transparent;
   }
   .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 0 var(--ink);
+    transform: translateY(-1px);
+    filter: brightness(1.07);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 2px 4px rgba(11, 27, 43, 0.2),
+      0 16px 28px -10px rgba(18, 140, 74, 0.7);
   }
-  /* Squash: wider and shorter while pressed, then it springs back on release. */
+  /* Squash: a touch wider and shorter on press, springing back on release. */
   .btn:active {
-    transform: translateY(5px) scale(1.045, 0.92);
-    box-shadow: 0 1px 0 var(--ink);
+    transform: translateY(1px) scale(1.018, 0.972);
+    filter: none;
     transition-duration: 60ms;
   }
   .btn--ghost {
     background: #fff;
+    color: var(--ink);
+    border-color: rgba(11, 27, 43, 0.14);
+    box-shadow: var(--shadow-soft);
   }
-  .btn--ink {
-    background: var(--ink);
-    color: #fff;
-    border-color: var(--ink);
-    box-shadow: 0 6px 0 var(--lab);
+  .btn--ghost:hover {
+    filter: none;
+    box-shadow: var(--shadow-lift);
   }
-  .btn--ink:hover {
-    box-shadow: 0 8px 0 var(--lab);
-  }
-  .btn--ink:active {
-    box-shadow: 0 1px 0 var(--lab);
-  }
-  /* Arrow winds back before it launches (anticipation). */
+  /* Arrow winds back slightly before it launches (anticipation). */
   .wind {
-    transition: transform 380ms var(--ease-anticipate);
+    transition: transform 360ms var(--ease-anticipate);
   }
   .btn:hover .wind,
   .wind-host:hover .wind {
-    transform: translateX(6px);
+    transform: translateX(4px);
   }
 
   /* Deadline picker: real radios, so arrow keys and screen readers just work. */
@@ -113,34 +112,32 @@ body {
     gap: 0.15rem;
     min-height: 4rem;
     padding: 0.75rem 1rem;
-    border: 3px solid var(--ink);
-    border-radius: 1rem;
+    border: 1px solid rgba(11, 27, 43, 0.14);
+    border-radius: 0.85rem;
     background: #fff;
-    box-shadow: 0 5px 0 var(--ink);
+    box-shadow: var(--shadow-soft);
     cursor: pointer;
     transform-origin: 50% 100%;
-    transition: transform var(--t-snap) var(--ease-spring),
-      box-shadow var(--t-snap) var(--ease-out),
-      background-color var(--t-snap) var(--ease-out);
+    transition: transform var(--t-snap) var(--ease-spring), box-shadow var(--t-snap) var(--ease-out),
+      background-color var(--t-snap) var(--ease-out), color var(--t-snap) var(--ease-out);
     -webkit-tap-highlight-color: transparent;
   }
   .chip:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 7px 0 var(--ink);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-lift);
   }
   .chip:active {
-    transform: translateY(4px) scale(1.04, 0.92);
-    box-shadow: 0 1px 0 var(--ink);
+    transform: translateY(1px) scale(1.02, 0.97);
     transition-duration: 60ms;
   }
   input:checked + .chip {
     background: var(--ink);
+    border-color: var(--ink);
     color: #fff;
-    box-shadow: 0 2px 0 var(--ink);
-    transform: translateY(3px);
+    box-shadow: 0 10px 20px -10px rgba(11, 27, 43, 0.6);
   }
   input:focus-visible + .chip {
-    outline: 3px solid var(--signal);
+    outline: 2px solid var(--lab);
     outline-offset: 3px;
   }
 
@@ -148,56 +145,53 @@ body {
   @media (hover: hover) {
     .svc-list:has(.svc:hover) .svc:not(:hover),
     .svc-list:has(.svc:focus-visible) .svc:not(:focus-visible) {
-      opacity: 0.38;
+      opacity: 0.4;
     }
   }
   .svc {
-    transition: opacity 220ms var(--ease-out), background-color 220ms var(--ease-out);
+    transition: opacity 220ms var(--ease-out);
   }
   .svc .svc-icon {
     transition: transform 420ms var(--ease-spring);
   }
   .svc:hover .svc-icon,
   .svc:focus-visible .svc-icon {
-    transform: rotate(-9deg) scale(1.1);
+    transform: rotate(-6deg) scale(1.06);
   }
 
-  /* Work cards: a solid slab that tilts in 3D toward the pointer. */
+  /* Work cards: a slab that tilts gently in 3D toward the pointer. */
   .slab {
-    transform: perspective(1000px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
-    box-shadow: calc(var(--ry, 0deg) * -0.9) 12px 0 var(--ink);
-    transition: transform 420ms var(--ease-spring), box-shadow 420ms var(--ease-spring);
+    transform: perspective(1100px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+    box-shadow: var(--shadow-soft);
+    transition: transform 460ms var(--ease-spring), box-shadow 300ms var(--ease-out);
     will-change: transform;
   }
+  .slab:hover {
+    box-shadow: var(--shadow-lift);
+  }
   .slab[data-live="true"] {
-    transition: transform 70ms linear, box-shadow 70ms linear;
-  }
-  .slab .stamp {
-    transition: transform 380ms var(--ease-spring);
-  }
-  .slab:hover .stamp {
-    transform: rotate(-9deg) scale(1.12);
+    transition: transform 80ms linear, box-shadow 300ms var(--ease-out);
   }
 }
 
 /* ───────────────────────── The one orchestrated moment ─────────────────────────
-   The stopwatch falls in, squashes on impact, stretches on the rebound, settles. */
+   The stopwatch settles in: a short fall, a soft squash on landing, a small stretch rebound. */
 @keyframes watch-drop {
   0% {
-    transform: translateY(-115%) scale(0.92, 1.1);
-    animation-timing-function: cubic-bezier(0.55, 0, 1, 0.55); /* gravity */
+    transform: translateY(-60px) scale(0.97, 1.04);
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.5, 0, 0.9, 0.5);
   }
-  50% {
-    transform: translateY(0) scale(1.12, 0.84); /* impact squash */
+  14% {
+    opacity: 1;
+  }
+  52% {
+    transform: translateY(0) scale(1.05, 0.95); /* impact squash */
     animation-timing-function: cubic-bezier(0.2, 0.7, 0.4, 1);
   }
-  68% {
-    transform: translateY(-7%) scale(0.96, 1.05); /* rebound stretch */
-    animation-timing-function: cubic-bezier(0.55, 0, 0.8, 0.4);
-  }
-  84% {
-    transform: translateY(0) scale(1.03, 0.97);
-    animation-timing-function: ease-out;
+  72% {
+    transform: translateY(-2.5%) scale(0.99, 1.02); /* rebound stretch */
+    animation-timing-function: ease-in-out;
   }
   100% {
     transform: translateY(0) scale(1, 1);
@@ -205,25 +199,21 @@ body {
 }
 @keyframes ground-shadow {
   0% {
-    transform: scale(0.3);
-    opacity: 0.1;
+    transform: scale(0.5);
+    opacity: 0;
   }
-  50% {
-    transform: scale(1.15);
-    opacity: 0.32;
-  }
-  68% {
-    transform: scale(0.85);
-    opacity: 0.2;
+  52% {
+    transform: scale(1.08);
+    opacity: 0.3;
   }
   100% {
     transform: scale(1);
-    opacity: 0.28;
+    opacity: 0.24;
   }
 }
 @keyframes rise {
   from {
-    transform: translateY(28px);
+    transform: translateY(18px);
     opacity: 0;
   }
   to {
@@ -233,10 +223,10 @@ body {
 }
 @keyframes pop {
   0% {
-    transform: scale(0.85);
+    transform: scale(0.92);
   }
   60% {
-    transform: scale(1.1);
+    transform: scale(1.04);
   }
   100% {
     transform: scale(1);
@@ -247,31 +237,28 @@ body {
   100% {
     transform: rotate(0);
   }
-  25% {
+  30% {
     transform: rotate(-8deg) scale(1.1);
   }
-  55% {
-    transform: rotate(6deg) scale(1.08);
-  }
-  80% {
-    transform: rotate(-3deg);
+  60% {
+    transform: rotate(5deg) scale(1.06);
   }
 }
 .anim-watch {
   transform-origin: 50% 100%;
-  animation: watch-drop 1150ms both;
+  animation: watch-drop 1100ms both;
 }
 .anim-ground {
-  animation: ground-shadow 1150ms both;
+  animation: ground-shadow 1100ms both;
 }
 .anim-rise {
-  animation: rise 700ms var(--ease-spring) both;
+  animation: rise 700ms var(--ease-out) both;
 }
 .anim-pop {
-  animation: pop 260ms var(--ease-spring);
+  animation: pop 240ms var(--ease-spring);
 }
 .anim-wiggle {
-  animation: wiggle 520ms var(--ease-out);
+  animation: wiggle 480ms var(--ease-out);
 }
 
 /* Reduced motion: keep every state change, drop the travel. */
